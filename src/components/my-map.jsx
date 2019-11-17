@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
 import { connect } from 'react-redux';
 
+const mapStyles = {
+  height: '80%'
+}
+
 class MyMapComponent extends Component {
   render(){
     const eventLocation = this.props.singleEvent.data.location
@@ -14,6 +18,7 @@ class MyMapComponent extends Component {
         google={this.props.google}
         zoom={15}
         initialCenter={{ lat: location.latitude, lng: location.longitude}}
+        style={mapStyles}
         >
           <Marker position={{ lat:location.latitude, lng: location.longitude }}/>
         </Map>

@@ -3,7 +3,7 @@
     background-position: center;
     background-size: cover;
     background-image: url('../intro-bg.jpg');
-    min-height: 600px;
+    min-height: 900px;
 }
 
 .img-card {
@@ -20,6 +20,7 @@
 
 .event-date {
     color: red;
+    font-weight: bold;
 }
 
 .event-title {
