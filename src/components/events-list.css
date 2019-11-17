@@ -8,6 +8,7 @@
 
 .img-card {
     width: 18rem;
+    height: 12rem;
 }
 
 .events-cards {
@@ -15,4 +16,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.event-date {
+    color: red;
+}
+
+.event-title {
+    min-height: 4rem;
 }

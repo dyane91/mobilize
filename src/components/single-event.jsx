@@ -1,18 +1,25 @@
 import React, {Component} from 'react';
 import { MyMapComponent } from './my-map';
+import {connect} from 'react-redux';
+import {getSingleEvent} from '../redux-store/events';
 import Card from 'react-bootstrap/Card';
 
-export class SingleEvent extends Component {
-    render(){
-        return (
+class SingleEvent extends Component {
+    componentDidMount() {
+      console.log('COMPONENT DID MOUNT');
+      this.props.getSingleEvent(this.props.match.params.id);
+    }
+    render() {
+      const event = this.props.singleEvent.data;
+        return event && Object.keys(event.length > 0) ? (
             <div className="col-12">
                 <div className="row h-100">
                     <div className="col-6">
-                        <p>Tuesday, November 12th 2019</p>
-                        <p>Name Event</p>
-                        <p>Hosted by *****</p>
+                        <p>{new Date(event.timeslots[0].start_date*1000).toDateString("en-US")}</p>
+                        <p>{event.title}</p>
+                        <p>Hosted by ***</p>
                         <img src={require("../porahora.jpg")} alt="place"/>
-                        <p>Enim incididunt reprehenderit irure ut eiusmod. Elit aute ex aliquip ad cupidatat magna exercitation esse aute cupidatat exercitation veniam nostrud. Ad dolore consectetur tempor do velit est in consectetur. Eiusmod aute magna culpa occaecat aliqua exercitation. Laborum reprehenderit cupidatat duis voluptate eiusmod ut adipisicing excepteur adipisicing irure excepteur culpa id reprehenderit. Ipsum sint elit nulla veniam ipsum deserunt occaecat. Laboris excepteur nostrud elit esse eu consectetur sit proident laboris ut.</p>
+                        <p>HOLA HOLA</p>
                     </div>
                     <div className="col-6" style={{width:"50%"}}>
                         <Card>
@@ -31,6 +38,16 @@ export class SingleEvent extends Component {
                     </div>
                 </div>
             </div>
-        )
+        ) : (<div>No Loading</div>)
     }
 }
+
+const mapStateToProps = (state) => ({
+  singleEvent: state.events.singleEvent
+});
+
+const mapDispatchToProps = dispatch => ({
+  getSingleEvent: (id) => dispatch(getSingleEvent(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleEvent);

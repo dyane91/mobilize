@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {getEvents} from '../redux-store/events';
 import ReactPaginate from 'react-paginate';
-// import Pagination from 'react-bootstrap/Pagination';
+import './pagination.css';
 
 class PaginationJs extends Component {
   constructor(){
@@ -18,9 +18,12 @@ class PaginationJs extends Component {
     let totalEvents = this.props.events.count;
     let active = this.props.pageNumber;
     return (
-      <div>
-          <ReactPaginate activeClassName={'active'}key={active}  initialPage={1}pageCount={totalEvents/24} pageRangeDisplayed={10} marginPagesDisplayed={2}  onPageChange={(event)=> this.handleGetEvents(event.selected)}>
-          </ReactPaginate>
+      <div className="react-paginate">
+        <div >
+            <ReactPaginate activeClassName={'active'}key={active}  initialPage={1}pageCount={totalEvents/24} pageRangeDisplayed={10} marginPagesDisplayed={2}  onPageChange={(event)=> this.handleGetEvents(event.selected)}>
+            </ReactPaginate>
+        </div>
+
       </div>
     )
   }

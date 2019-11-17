@@ -11,16 +11,16 @@ const gotEvents = events => ({
   events
 });
 
-const gotSingleEvent = singleProduct => ({
+const gotSingleEvent = singleEvent => ({
   type: SINGLE_EVENT,
-  singleProduct
+  singleEvent
 });
 
 //Initial state
 const initialState = {
   events: [],
-  selectedProduct: {},
-  pageNumber: 1
+  singleEvent: {},
+  pageNumber: 0
 };
 
 export const getEvents = (pageNumber) => {
@@ -50,7 +50,7 @@ export default function (state = initialState, action) {
     case ALL_EVENTS:
       return {...state, events: action.events}
     case SINGLE_EVENT:
-      return {...state, singleProduct: action.singleProduct}
+      return {...state, singleEvent: action.singleEvent}
     default:
       return state
   }

@@ -1,0 +1,25 @@
+/* .pagination li {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  background-color: burlywood;
+} */
+
+.react-paginate ul {
+  display: inline-block;
+}
+
+.react-paginate li {
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.react-paginate a {
+  color: inherit;
+}
+
+.react-paginate a:hover {
+  cursor: pointer;
+  color: inherit;
+}

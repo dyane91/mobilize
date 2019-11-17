@@ -1,17 +1,11 @@
 import React from 'react';
-import {HomePage} from './components/homepage';
+import Routes from './routes';
 import './App.css';
 
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <HomePage />
-//   </Provider>,
-//   document.getElementById('app')
-// )
 function App() {
   return (
    <div>
-     <HomePage />
+     <Routes />
    </div>
   );
 }
