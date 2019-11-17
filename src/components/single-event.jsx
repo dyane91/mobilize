@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { MyMapComponent } from './my-map';
+import MyMapComponent from './my-map';
 import {connect} from 'react-redux';
 import {getSingleEvent} from '../redux-store/events';
 import Card from 'react-bootstrap/Card';
@@ -17,14 +17,15 @@ class SingleEvent extends Component {
                     <div className="col-6">
                         <p>{new Date(event.timeslots[0].start_date*1000).toDateString("en-US")}</p>
                         <p>{event.title}</p>
-                        <p>Hosted by ***</p>
+                        <p>Hosted by {event.sponsor.name}</p>
                         <img src={require("../porahora.jpg")} alt="place"/>
-                        <p>HOLA HOLA</p>
+                        <p>{event.summary}</p>
                     </div>
                     <div className="col-6" style={{width:"50%"}}>
                         <Card>
-                            <Card.Text>Fecha</Card.Text>
-                            <Card.Text>Address</Card.Text>
+                            <Card.Text>{new Date(event.timeslots[0].start_date*1000).toDateString("en-US")}</Card.Text>
+                            <Card.Text>{event.location ? <p>{event.location.venue} <br/> {event.location.address_lines} <br/>
+                            {event.location.region} {event.location.region}</p> : <p>Virtual event</p>}</Card.Text>
                             <Card.Body>
                                 <MyMapComponent
                                     isMarkerShown
