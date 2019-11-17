@@ -1,0 +1,18 @@
+.intro-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../intro-bg.jpg');
+    min-height: 600px;
+}
+
+.img-card {
+    width: 18rem;
+}
+
+.events-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
