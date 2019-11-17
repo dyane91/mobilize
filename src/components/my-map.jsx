@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 
 class MyMapComponent extends Component {
   render(){
-    if(!this.props.singleEvent.data.location){
+    const eventLocation = this.props.singleEvent.data.location
+    if(!eventLocation){
       return <Map google={this.props.google} zoom={15}/>
     } else {
-      const location = this.props.singleEvent.data.location.location;
+      const location = eventLocation.location;
       return (
         <Map
         google={this.props.google}
