@@ -8,7 +8,25 @@ img {
   width: 100%;
 }
 
-.date-card p{
+.event-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: 'Alfa Slab One' cursive;
+  font-weight: bold;
+}
+
+.date-card {
   font-weight: bold;
   margin: 0px;
+}
+
+.rsvp-bttn {
+  padding-left: 50px !important;
+  padding-right: 50px !important
+}
+
+.about-event {
+  background-color: rgba(243, 241, 241, 0.644);
+  padding: 25px;
 }
