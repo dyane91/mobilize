@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {getEvents} from '../redux-store/events'
 import Card from 'react-bootstrap/Card';
+import './events-list.css';
 
 class EventsList extends Component {
   componentDidMount(){
@@ -22,7 +23,7 @@ class EventsList extends Component {
                 <Card.Text>
                 {!event.location ? "Its location is virtual" : event.location.locality + ", " + event.location.region + ", " + event.location.country}
                 </Card.Text>
-                <Link key={event.id} to={`/event/${event.id}`} >More Info</Link>
+                <Link key={event.id} to={`/event/${event.id}`} className="more-event">More Info</Link>
               </Card.Body>
           </Card>
         ))}

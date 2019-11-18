@@ -1,0 +1,9 @@
+.more-event {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+  cursor: pointer;
+  color: inherit;
+  font-weight: bold;
+}
