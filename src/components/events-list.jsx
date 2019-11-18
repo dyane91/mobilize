@@ -24,6 +24,7 @@ class EventsList extends Component {
                 {event && event.timeslots.length ? new Date(event.timeslots[0].start_date*1000).toDateString("en-US") : <p>No date available</p>}</Card.Subtitle>
                 <Card.Title className="event-title">{event.title}</Card.Title>
                 <Card.Text>
+                {/* virtual events don't have a location */}
                 {!event.location ? "Its location is virtual" : event.location.locality + ", " + event.location.region + ", " + event.location.country}
                 </Card.Text>
                 <Link key={event.id} to={`/event/${event.id}`} className="more-event">More Info</Link>
